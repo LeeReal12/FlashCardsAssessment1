@@ -16,7 +16,7 @@ function Layout() {
       <Header />
       <div className="container">
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Link to="/decks/new">
               <button className="btn btn-secondary">
                 <i className="fas fa-plus"></i> Create Deck

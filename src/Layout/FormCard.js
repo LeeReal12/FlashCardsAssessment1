@@ -12,7 +12,7 @@ function FormCard({ deckId, newCardData, changeHandler, submitHandler }) {
           id='front'
           name='front'
           rows='5'
-          placeholder='Front side of card'
+          placeholder='Front of card'
           onChange={changeHandler}
           value={newCardData.front}
           required
@@ -25,7 +25,7 @@ function FormCard({ deckId, newCardData, changeHandler, submitHandler }) {
           id='back'
           name='back'
           rows='5'
-          placeholder='Back side of card'
+          placeholder='Back of card'
           onChange={changeHandler}
           value={newCardData.back}
           required

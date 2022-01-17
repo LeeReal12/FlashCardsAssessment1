@@ -77,7 +77,7 @@ function AddCard() {
           </li>
         </ol>
       </nav>
-      <h1 className='my-4 text-center'>
+      <h1 className='my-3 text-center'>
         {deck.name}: <span>Add Card</span>
       </h1>
       <Form
