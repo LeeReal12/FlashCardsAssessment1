@@ -61,7 +61,7 @@ function Home() {
               className="btn btn-secondary"
               onClick={() => history.push(`/decks/${deck.id}`)}
             >
-              <i className="fas fa-binoculars"></i> View
+              <i className="fas fa-binoculars" /> View
             </button>
           </Link>
           <Link to={`/decks/${deck.id}/study`} className="card-link">
@@ -69,7 +69,7 @@ function Home() {
               className="btn btn-primary"
               onClick={() => history.push(`/decks/${deck.id}/study`)}
             >
-              <i className="fas fa-book"></i> Study
+              <i className="fas fa-book" /> Study
             </button>
           </Link>
           <Link to="#" className="card-link">
@@ -77,7 +77,7 @@ function Home() {
               className="btn btn-danger"
               onClick={() => deleteHandler(deck.id)}
             >
-              <i className="fas fa-trash"></i> Delete
+              <i className="fas fa-trash" /> Delete
             </button>
           </Link>
         </div>

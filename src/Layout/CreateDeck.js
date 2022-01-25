@@ -31,7 +31,7 @@ function CreateDeck() {
         <ol className='breadcrumb'>
           <li className='breadcrumb-item'>
             <Link to='/'>
-              <i className='fas fa-home'></i> Home
+              <i className='fas fa-home' /> Home
             </Link>
           </li>
           <li className='breadcrumb-item active' aria-current='page'>
@@ -43,29 +43,25 @@ function CreateDeck() {
         <h1 className='my-4 text-center'>Create Deck</h1>
         <div className='form-group'>
           <label htmlFor='name'>Name</label>
-          <input
-            name='name'
-            id='name'
-            className='form-control form-control-lg'
-            type='text'
-            placeholder='Deck Name'
-            onChange={onChangeHandler}
-            value={formData.name}
-            required
-          ></input>
+          <input name='name'
+          id='name'
+          className='form-control form-control-lg'
+          type='text'
+          placeholder='Deck Name'
+          onChange={onChangeHandler}
+          value={formData.name}
+          required />
         </div>
         <div className='form-group'>
           <label htmlFor='description'>Description</label>
-          <textarea
-            className='form-control'
-            id='description'
-            name='description'
-            rows='5'
-            placeholder='Brief description of the deck'
-            onChange={onChangeHandler}
-            value={formData.description}
-            required
-          ></textarea>
+          <textarea className='form-control'
+          id='description'
+          name='description'
+          rows='5'
+          placeholder='Brief description of the deck'
+          onChange={onChangeHandler}
+          value={formData.description}
+          required />
         </div>
         <Link to='/' className='mr-2'>
           <button

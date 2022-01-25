@@ -48,7 +48,7 @@ function Study() {
   function flipCardHandler() {
     setStudyState({
       ...studyDeckState,
-      isCardFlipped: !studyDeckState['isCardFlipped'],
+      isCardFlipped: !studyDeckState.isCardFlipped,
     });
   }
 
@@ -78,7 +78,7 @@ function Study() {
       <ol className='breadcrumb'>
         <li className='breadcrumb-item'>
           <Link to='/'>
-            <i className='fas fa-home'></i> Home
+            <i className='fas fa-home' /> Home
           </Link>
         </li>
         <li className='breadcrumb-item'>
@@ -91,62 +91,58 @@ function Study() {
     </nav>
   );
 
-  if (deck.cards.length <= 2) {
-    return (
-      <React.Fragment>
-        {breadcrumb}
-        <div className='card'>
-          <div className='card-body'>
-            <h1>{deck.name}: Study</h1>
-            <h2 className='card-title'>Not enough cards.</h2>
-            <p className='card-text'>
-              You need at least 3 cards to study. Please add more cards to this
-              deck.
-            </p>
-            <Link to={`/decks/${deckId}/cards/new`}>
-              <button type='button' className='btn btn-primary'>
-                <i className='fas fa-plus'></i> Add Card
-              </button>
-            </Link>
-          </div>
-        </div>
-      </React.Fragment>
-    );
-  } else {
-    return (
-      <React.Fragment>
-        {breadcrumb}
-        <h1 className='text-center'>Currently Studying: {deck.name} </h1>
-        <div className='card'>
-          <div className='card-body'>
-            <h4 className='card-title'>
-              Card {currentIndex + 1} of {deck.cards.length}
-            </h4>
-            <h5 className='card-text'>
-              {!isCardFlipped
-                ? `Question: ${deck.cards[currentIndex].front}`
-                : `Answer: ${deck.cards[currentIndex].back}`}
-            </h5>
-          </div>
-          <button
-            type='button'
-            className='btn btn-secondary py-3'
-            onClick={() => flipCardHandler()}
-          >
-            Flip
-          </button>
-          {isCardFlipped && (
-            <button
-              className='btn btn-primary py-3'
-              onClick={getNextCardHandler}
-            >
-              Next
+  return deck.cards.length <= 2 ? (
+    <React.Fragment>
+      {breadcrumb}
+      <div className='card'>
+        <div className='card-body'>
+          <h1>{deck.name}: Study</h1>
+          <h2 className='card-title'>Not enough cards.</h2>
+          <p className='card-text'>
+            You need at least 3 cards to study. Please add more cards to this
+            deck.
+          </p>
+          <Link to={`/decks/${deckId}/cards/new`}>
+            <button type='button' className='btn btn-primary'>
+              <i className='fas fa-plus' /> Add Card
             </button>
-          )}
+          </Link>
         </div>
-      </React.Fragment>
-    );
-  }
+      </div>
+    </React.Fragment>
+  ) : (
+    <React.Fragment>
+      {breadcrumb}
+      <h1 className='text-center'>Currently Studying: {deck.name} </h1>
+      <div className='card'>
+        <div className='card-body'>
+          <h4 className='card-title'>
+            Card {currentIndex + 1} of {deck.cards.length}
+          </h4>
+          <h5 className='card-text'>
+            {!isCardFlipped
+              ? `Question: ${deck.cards[currentIndex].front}`
+              : `Answer: ${deck.cards[currentIndex].back}`}
+          </h5>
+        </div>
+        <button
+          type='button'
+          className='btn btn-secondary py-3'
+          onClick={() => flipCardHandler()}
+        >
+          Flip
+        </button>
+        {isCardFlipped && (
+          <button
+            className='btn btn-primary py-3'
+            onClick={getNextCardHandler}
+          >
+            Next
+          </button>
+        )}
+      </div>
+    </React.Fragment>
+  );
 }
 
 export default Study;

@@ -47,7 +47,7 @@ function EditDeck() {
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    const response = await updateDeck(editDeckFormData);
+    const response = await updateDeck(setEditDeckFormData);
     history.push(`/decks/${response.id}`);
   };
 
@@ -57,7 +57,7 @@ function EditDeck() {
         <ol className='breadcrumb'>
           <li className='breadcrumb-item'>
             <Link to='/'>
-              <i className='fas fa-home'></i> Home
+              <i className='fas fa-home' /> Home
             </Link>
           </li>
           <li className='breadcrumb-item'>
@@ -74,29 +74,24 @@ function EditDeck() {
         <h1 className='my-4 text-center'>Edit Deck</h1>
         <div className='form-group'>
           <label htmlFor='name'>Name</label>
-          <input
-            name='name'
-            id='name'
-            className='form-control form-control-lg'
-            type='text'
-            placeholder='Deck Name'
-            onChange={changeHandler}
-            value={editDeckFormData.name}
-            required
-          ></input>
+          <input name='name'
+          id='name'
+          className='form-control form-control-lg'
+          type='text'
+          onChange={changeHandler}
+          value={editDeckFormData.name}
+          required />
         </div>
         <div className='form-group'>
           <label htmlFor='description'>Description</label>
-          <textarea
-            className='form-control'
-            id='description'
-            name='description'
-            rows='5'
-            placeholder='Brief description of the deck'
-            onChange={changeHandler}
-            value={editDeckFormData.description}
-            required
-          ></textarea>
+          <textarea className='form-control'
+          id='description'
+          name='description'
+          rows='5'
+          placeholder='Brief description of the deck'
+          onChange={changeHandler}
+          value={editDeckFormData.description}
+          required />
         </div>
         <Link to='/' className='mr-2'>
           <button

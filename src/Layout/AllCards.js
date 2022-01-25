@@ -26,14 +26,14 @@ function AllCards({ cards = [] }) {
             <div>
               <Link to={`${url}/cards/${card.id}/edit`}>
                 <button className='btn btn-secondary m-3'>
-                  <i className='fas fa-edit'></i> Edit
+                  <i className='fas fa-edit' /> Edit
                 </button>
               </Link>
               <button
                 className='btn btn-danger m-3'
                 onClick={() => deleteCardHandler(card.id)}
               >
-                <i className='fas fa-trash'></i> Delete Card
+                <i className='fas fa-trash' /> Delete Card
               </button>
             </div>
           </div>

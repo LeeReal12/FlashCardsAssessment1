@@ -6,7 +6,7 @@ import Home from "./Home";
 import Study from "./Study";
 import CreateDeck from "./CreateDeck";
 import EditDeck from "./EditDeck";
-import Deck from "./Deck";
+import DeckView from "./DeckView";
 import AddCard from "./AddCard";
 import EditCard from "./EditCard";
 
@@ -19,7 +19,7 @@ function Layout() {
           <Route exact path="/">
             <Link to="/decks/new">
               <button className="btn btn-secondary">
-                <i className="fas fa-plus"></i> Create Deck
+                <i className="fas fa-plus" /> Create Deck
               </button>
             </Link>
             <Home />
@@ -37,8 +37,8 @@ function Layout() {
             <EditDeck />
           </Route>
 
-          <Route path="/decks/:deckId">
-            <Deck />
+          <Route exact path="/decks/:deckId">
+            <DeckView />
           </Route>
 
           <Route path="/decks/:deckId/cards/new">

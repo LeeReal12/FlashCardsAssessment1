@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import { readDeck, createCard } from '../utils/api';
-import Form from './FormCard';
+import FormCard from './FormCard';
 
 function AddCard() {
   const mountedRef = useRef(false);
@@ -66,7 +66,7 @@ function AddCard() {
         <ol className='breadcrumb'>
           <li className='breadcrumb-item'>
             <Link to='/'>
-              <i className='fas fa-home'></i> Home
+              <i className='fas fa-home' /> Home
             </Link>
           </li>
           <li className='breadcrumb-item'>
@@ -80,7 +80,7 @@ function AddCard() {
       <h1 className='my-3 text-center'>
         {deck.name}: <span>Add Card</span>
       </h1>
-      <Form
+      <FormCard
         changeHandler={changeHandler}
         submitHandler={submitHandler}
         newCardData={newCardData}
